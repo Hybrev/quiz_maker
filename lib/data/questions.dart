@@ -1,5 +1,4 @@
 import 'package:quiz_maker/models/quiz_question.dart';
-import 'package:quiz_maker/quiz.dart';
 
 const questions = [
   QuizQuestion('What is the color of your umbrella?',
