@@ -31,7 +31,7 @@ class Home extends StatelessWidget {
           const SizedBox(
             height: 20.0,
           ),
-          OutlinedButton.icon(
+          TextButton.icon(
             icon: const Icon(
               Icons.arrow_right,
               color: Colors.white,
