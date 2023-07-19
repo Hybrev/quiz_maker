@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_maker/components/numbered_circles.dart';
 import 'package:quiz_maker/components/results_text.dart';
 
 class QuestionsSummary extends StatelessWidget {
@@ -15,12 +16,7 @@ class QuestionsSummary extends StatelessWidget {
           (data) {
             return Row(
               children: [
-                CircleAvatar(
-                  backgroundColor: Colors.blue,
-                  maxRadius: 15,
-                  child: ResultsText(((data['index'] as int) + 1).toString(),
-                      12, Colors.white, FontWeight.normal),
-                ),
+                NumberedCircle(((data['index'] as int) + 1).toString(), data['user_answer'] == data['correct_answer']),
                 const SizedBox(width: 20),
                 Expanded(
                   child: Column(
