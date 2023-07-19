@@ -3,12 +3,6 @@ import 'package:quiz_maker/models/quiz_question.dart';
 const questions = [
   QuizQuestion('What is the color of your umbrella?',
       ['Black', 'Blue', 'Brown', 'Burgundy']),
-  QuizQuestion('Sombi sombi?', [
-    'yes',
-    'no',
-    'yesn\'t',
-    'non\'t',
-  ]),
   QuizQuestion(
     'What are the main building blocks of Flutter UIs?',
     [
@@ -23,6 +17,12 @@ const questions = [
     'By combining widgets in a visual editor',
     'By defining widgets in config files',
     'By using XCode for iOS and Android Studio for Android',
+  ]),
+  QuizQuestion('Sombi sombi?', [
+    'yes',
+    'no',
+    'yesn\'t',
+    'non\'t',
   ]),
   QuizQuestion(
     'What\'s the purpose of a StatefulWidget?',
@@ -59,5 +59,5 @@ const questions = [
       'By calling updateUI()',
       'By calling updateState()',
     ],
-  )
+  ),
 ];

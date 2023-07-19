@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'text_style.dart';
+import 'package:quiz_maker/components/text_style.dart';
 
 class Home extends StatelessWidget {
   const Home(this.startQuiz, {super.key});
@@ -37,7 +37,10 @@ class Home extends StatelessWidget {
               color: Colors.white,
             ),
             onPressed: startQuiz,
-            label: const Text('Start Quiz', style: TextStyle(color: Colors.white),),
+            label: const Text(
+              'Start Quiz',
+              style: TextStyle(color: Colors.white),
+            ),
           )
         ],
       ),

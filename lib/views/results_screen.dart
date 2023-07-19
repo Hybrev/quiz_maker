@@ -1,8 +1,8 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:quiz_maker/data/questions.dart';
-import 'package:quiz_maker/questions_screen.dart';
 import 'package:quiz_maker/questions_summary.dart';
+
+import '../components/text_style.dart';
 
 class ResultsScreen extends StatelessWidget {
   const ResultsScreen({super.key, required this.chosenAnswers});
@@ -28,6 +28,12 @@ class ResultsScreen extends StatelessWidget {
 
   @override
   Widget build(context) {
+    final summaryData = getSummary();
+    final totalQuestions = questions.length;
+    final correctQuestions = summaryData.where((data) {
+      return data['user_answer'] == data['correct_answer'];
+    }).length;
+
     return SizedBox(
       width: double.infinity,
       child: Container(
@@ -35,11 +41,13 @@ class ResultsScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text('correct answers: ###'),
+              HomeText(
+                  'Correct Answers: $correctQuestions out of $totalQuestions',
+                  24.0),
               const SizedBox(
                 height: 30,
               ),
-              QuestionsSummary(getSummary()),
+              QuestionsSummary(summaryData),
               const SizedBox(
                 height: 30,
               ),
